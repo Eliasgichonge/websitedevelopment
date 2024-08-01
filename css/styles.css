@@ -335,7 +335,7 @@ a {
 
 /* Plans */
 .plan {
- transition: tranform .2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .plan__name {
@@ -599,7 +599,6 @@ a {
   max-height: 100vh;
   opacity: 1;
 }
-
 /* Blocks */
 .block {
   --padding-vertical: 6rem;
@@ -669,8 +668,8 @@ a {
 
 .nav__toggler {
   opacity: 0.5;
+  transition: box-shadow 0.15s;
   cursor: pointer;
-  transition: box-shadow .15s;
 }
 
 .nav.collapsible--expanded .nav__toggler {
@@ -721,6 +720,7 @@ a {
   .hero {
     padding-top: 0;
   }
+
   .hero__content {
     text-align: left;
     align-self: center;
@@ -748,11 +748,9 @@ a {
 
 @media screen and (min-width: 768px) {
   .block-domain__prices {
-    grid-template-columns: repeat(6, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
-
 /* Plans Block */
 .block-plans .grid {
   gap: 8rem 4rem;
@@ -761,4 +759,28 @@ a {
 .block-plans .card {
   max-width: 500px;
   margin: 0 auto;
+}
+
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+
+.feature__heading {
+  margin: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
 }
